@@ -1,0 +1,949 @@
+/* --- VARIABLES Y CONFIGURACIÓN GLOBAL --- */
+:root {
+	--bg: #ffffff;
+	--text: #1d1d1f;
+	/* Gris casi negro de Apple */
+	--accent: #0071e3;
+	/* Azul Apple */
+	--gray: #86868b;
+	/* Texto secundario */
+	--card-bg: #f5f5f7;
+	/* Fondo de tarjetas */
+	--nav-bg: rgba(255, 255, 255, 0.8);
+	--transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	line-height: 1.5;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* --- NAVEGACIÓN (HEADER) --- */
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 52px;
+	/* Altura estándar Apple */
+	background: var(--nav-bg);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+	width: 90%;
+	max-width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-weight: 600;
+	font-size: 1.2rem;
+	letter-spacing: -0.02em;
+
+	/* Estas dos líneas son la clave */
+	text-decoration: none !important;
+	/* Quita el subrayado por completo */
+	color: var(--text) !important;
+	/* Fuerza el color negro/oscuro que definimos */
+
+	transition: var(--transition);
+	cursor: pointer;
+}
+
+.logo:hover {
+	opacity: 0.7;
+	/* Un toque sutil para que el usuario sepa que es clickeable */
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	gap: 30px;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: var(--text);
+	font-size: 0.85rem;
+	font-weight: 400;
+	opacity: 0.8;
+	transition: var(--transition);
+}
+
+.nav-links a:hover {
+	opacity: 1;
+	color: var(--accent);
+}
+
+/* Menú hamburguesa (oculto en PC) */
+.menu-btn {
+	display: none;
+	cursor: pointer;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+/* --- HERO SECTION (HOME) --- */
+.hero-section {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+}
+
+.hero-container {
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-img {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 30px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	font-size: clamp(2.5rem, 8vw, 4.5rem);
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 1.1;
+	margin-bottom: 15px;
+}
+
+.subtitle,
+.gray-text {
+	color: var(--gray);
+	font-size: 1.25rem;
+	font-weight: 400;
+	max-width: 500px;
+}
+
+/* --- GRID DE PROYECTOS (INDEX) --- */
+.container {
+	padding: 100px 5%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.section-title {
+	font-size: 2.5rem;
+	letter-spacing: -0.03em;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 40px;
+}
+
+.project-card {
+	background: var(--card-bg);
+	border-radius: 28px;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-card:hover {
+	transform: scale(1.02) translateY(-5px);
+}
+
+.project-card img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+}
+
+.card-info {
+	padding: 30px;
+}
+
+.card-info h3 {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+}
+
+.card-info p {
+	color: var(--gray);
+}
+
+/* --- PÁGINA DE ENLACES (LINKS) --- */
+.links-page {
+	padding-top: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
+	width: 100%;
+}
+
+.links-wrapper {
+	width: 90%;
+	max-width: 580px;
+	padding: 40px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.link-card {
+	background: var(--card-bg);
+	padding: 24px 30px;
+	border-radius: 20px;
+	text-decoration: none;
+	color: var(--text);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 500;
+	font-size: 1.1rem;
+	transition: var(--transition);
+	border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.link-card:hover {
+	background: #ffffff;
+	transform: scale(1.02);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.arrow {
+	font-size: 1.2rem;
+	opacity: 0.3;
+}
+
+/* --- FOOTER --- */
+footer {
+	padding: 80px 20px;
+	text-align: center;
+	color: var(--gray);
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+/* --- ANIMACIONES DE REVELACIÓN (SCROLL) --- */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 1s ease, transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+	.nav-links {
+		display: flex;
+		/* CAMBIA DE NONE A FLEX */
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100vh;
+		background: rgba(255, 255, 255, 0.98);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+		gap: 40px;
+		z-index: 10000;
+	}
+
+	.nav-links.open {
+		right: 0;
+		/* Esto lo hace aparecer */
+	}
+
+	/* El resto se queda igual... */
+}
+
+/* Botón Central opcional */
+.center-btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.btn {
+	padding: 12px 25px;
+	background: var(--text);
+	color: white;
+	text-decoration: none;
+	border-radius: 980px;
+	/* Botón píldora Apple */
+	font-weight: 500;
+	transition: var(--transition);
+}
+
+.btn:hover {
+	transform: scale(1.05);
+	opacity: 0.9;
+}
+
+/* --- HAMBURGER MENU ANIMATION --- */
+.menu-btn {
+	position: relative;
+	display: none;
+	/* Se activa en móvil vía Media Query */
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+	z-index: 10001;
+}
+
+.menu-btn__burger {
+	width: 20px;
+	height: 2px;
+	background: var(--text);
+	border-radius: 5px;
+	transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	background: var(--text);
+	border-radius: 5px;
+	transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+	transform: translateY(-6px);
+}
+
+.menu-btn__burger::after {
+	transform: translateY(6px);
+}
+
+/* Animación a X */
+.menu-btn.open .menu-btn__burger {
+	transform: translateX(-50px);
+	background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+	transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+	transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* --- MOBILE NAVIGATION --- */
+@media (max-width: 768px) {
+	.menu-btn {
+		display: flex;
+	}
+
+	.nav-links {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		/* Escondido a la derecha */
+		width: 100%;
+		height: 100vh;
+		background: rgba(255, 255, 255, 0.98);
+		backdrop-filter: blur(20px);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+		gap: 40px;
+	}
+
+	.nav-links.open {
+		right: 0;
+		/* Aparece al hacer clic */
+	}
+
+	.nav-links a {
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+}
+
+/* --- Scroll Indicator --- */
+.scroll-indicator {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	color: var(--gray);
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	opacity: 0.8;
+	transition: var(--transition);
+}
+
+/* La flecha minimalista (una línea angulada) */
+.arrow-scroll {
+	width: 1px;
+	height: 40px;
+	background: linear-gradient(to bottom, var(--gray), transparent);
+	position: relative;
+	animation: scrollBounce 2s infinite;
+}
+
+.arrow-scroll::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: -3px;
+	width: 7px;
+	height: 7px;
+	border-bottom: 1px solid var(--gray);
+	border-right: 1px solid var(--gray);
+	transform: rotate(45deg);
+}
+
+@keyframes scrollBounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(10px);
+	}
+
+	60% {
+		transform: translateY(5px);
+	}
+}
+
+/* Desaparece cuando el usuario empieza a bajar */
+.scroll-indicator.fade-out {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA TOOLS --- */
+
+.shop-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 30px;
+	padding-bottom: 50px;
+}
+
+.product-card {
+	background: var(--card-bg);
+	border-radius: 24px;
+	padding: 15px;
+	/* Margen interno para que la imagen no toque el borde */
+	display: flex;
+	flex-direction: column;
+	transition: var(--transition);
+	border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.product-card:hover {
+	background: #ffffff;
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor Imagen Formato 4:3 */
+.product-img-box {
+	width: 100%;
+	aspect-ratio: 3 / 3;
+	/* RELACIÓN DE ASPECTO 4:3 */
+	background: #fff;
+	border-radius: 18px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.product-img-box img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* Esto asegura que la imagen llene el 4:3 sin deformarse */
+}
+
+.category-tag {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--accent);
+	font-weight: 700;
+	margin-bottom: 8px;
+	display: block;
+}
+
+.product-info h3 {
+	font-size: 1.3rem;
+	margin-bottom: 10px;
+	letter-spacing: -0.02em;
+}
+
+.product-info p {
+	color: var(--gray);
+	font-size: 0.95rem;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+.buy-link {
+	margin-top: auto;
+	/* Empuja el enlace siempre al fondo de la tarjeta */
+	color: var(--text);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+	transition: var(--transition);
+}
+
+.buy-link:hover {
+	color: var(--accent);
+}
+
+/* --- Centrado Específico para Cabeceras --- */
+.center-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Centra horizontalmente los hijos */
+	justify-content: center;
+	text-align: center;
+	/* Centra el texto en sí mismo */
+	margin: 80px auto 60px auto;
+	/* Margen superior para el navbar y centrado auto */
+	width: 100%;
+	max-width: 800px;
+	/* Evita que el texto sea demasiado ancho en PC */
+	padding: 0 20px;
+	/* Margen de seguridad para móviles */
+}
+
+.center-header h1 {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.center-header .gray-text {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* --- Responsive para Tools --- */
+@media (max-width: 768px) {
+	.center-header {
+		margin-top: 100px;
+		/* Más espacio en móvil por el menú */
+	}
+
+	.center-header h1 {
+		font-size: 2.5rem;
+		/* Título un poco más pequeño en móviles */
+	}
+}
+
+
+/* --- CONTACT PAGE STYLES --- */
+
+.contact-wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+.contact-form {
+	background: var(--card-bg);
+	padding: 40px;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form-group label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-left: 5px;
+	color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+	padding: 18px;
+	border-radius: 15px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background: #ffffff;
+	font-size: 1rem;
+	transition: var(--transition);
+	outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	border-color: var(--accent);
+	box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+
+.btn-submit {
+	background: var(--text);
+	color: #fff;
+	padding: 18px;
+	border-radius: 15px;
+	border: none;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: var(--transition);
+	margin-top: 10px;
+}
+
+.btn-submit:hover {
+	background: var(--accent);
+	transform: scale(1.02);
+}
+
+/* Ajuste responsive para el formulario */
+@media (max-width: 768px) {
+	.contact-form {
+		padding: 25px;
+		border-radius: 20px;
+	}
+}
+
+/* --- PROJECTS PAGE SPECIFIC --- */
+
+.project-grid-main {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 40px;
+	margin-top: 50px;
+	padding-bottom: 80px;
+}
+
+.project-card-main {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	background: var(--card-bg);
+	border-radius: 30px;
+	overflow: hidden;
+	transition: var(--transition);
+	border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.project-card-main:hover {
+	transform: scale(1.02);
+	background: #ffffff;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.project-img-wrapper {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	/* Formato panorámico para proyectos */
+	overflow: hidden;
+}
+
+.project-img-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-card-main:hover .project-img-wrapper img {
+	transform: scale(1.08);
+	/* Efecto de zoom suave al pasar el ratón */
+}
+
+.project-info-main {
+	padding: 30px;
+}
+
+.project-info-main .category-tag {
+	color: var(--accent);
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.project-info-main h3 {
+	font-size: 1.6rem;
+	margin-bottom: 12px;
+	letter-spacing: -0.03em;
+}
+
+.project-info-main p {
+	color: var(--gray);
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.project-grid-main {
+		grid-template-columns: 1fr;
+		/* Una columna en móvil */
+		gap: 25px;
+	}
+}
+
+/* --- PROJECT ARTICLE STYLES --- */
+
+.project-article {
+	max-width: 900px;
+	margin: 120px auto 0;
+	padding: 0 25px;
+}
+
+.project-header {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.project-header h1 {
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	margin-top: 15px;
+}
+
+.project-lead {
+	font-size: 1.4rem;
+	color: var(--gray);
+	margin-top: 20px;
+	line-height: 1.4;
+}
+
+.main-project-img {
+	width: 100%;
+	border-radius: 30px;
+	overflow: hidden;
+	margin-bottom: 60px;
+}
+
+.main-project-img img {
+	width: 100%;
+	display: block;
+}
+
+
+.article-content h2 {
+	font-size: 2rem;
+	margin: 60px 0 20px;
+	letter-spacing: -0.02em;
+}
+
+.article-content p {
+	font-size: 1.15rem;
+	line-height: 1.7;
+	color: #333;
+	margin-bottom: 25px;
+}
+
+.image-row {
+	margin: 50px 0;
+	text-align: center;
+}
+
+.image-row img {
+	width: 100%;
+	border-radius: 20px;
+}
+
+.caption {
+	font-size: 0.9rem;
+	color: var(--gray);
+	margin-top: 15px;
+}
+
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding-left: 30px;
+	font-size: 1.5rem;
+	font-style: italic;
+	margin: 60px 0;
+	color: var(--text);
+}
+
+.final-cta {
+	margin: 80px 0;
+	display: flex;
+	justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.project-article {
+		margin-top: 80px;
+	}
+
+	.project-lead {
+		font-size: 1.1rem;
+	}
+
+	blockquote {
+		font-size: 1.2rem;
+	}
+}
+
+/* 1. Hacemos que la tarjeta sea el punto de referencia */
+.product-card {
+	position: relative;
+	/* Importante para que el enlace no se salga de la tarjeta */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+}
+
+/* 2. El truco del enlace estirado */
+.product-card .buy-link::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	/* Esto hace que cubra toda la tarjeta */
+}
+
+/* 3. Feedback visual para que el usuario sepa que es clicable */
+.product-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Aseguramos que si hay otros botones o enlaces dentro, queden por encima */
+.product-card img,
+.product-card .category-tag {
+	position: relative;
+	z-index: 2;
+}
+
+/* Quita los estilos por defecto del enlace */
+.full-card-link {
+	text-decoration: none;
+	color: inherit;
+	/* Hereda el color de texto de tu web */
+	display: block;
+	/* Ocupa todo el espacio de la tarjeta */
+	height: 100%;
+}
+
+.product-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border-radius: 12px;
+	/* O el radio que ya tengas */
+	overflow: hidden;
+}
+
+/* Efecto al pasar el ratón por cualquier parte de la tarjeta */
+.product-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el "falso" enlace de abajo */
+.buy-link-text {
+	display: inline-block;
+	margin-top: 10px;
+	color: #007bff;
+	/* O tu color corporativo */
+	font-weight: bold;
+}
+
+/* css/style.css */
+
+.popup-overlay {
+	/* Mantenemos el posicionamiento fijo para que no se mueva al hacer scroll */
+	position: fixed;
+	/* Forzamos a que empiece en la esquina superior izquierda absoluta de la ventana */
+	top: 0;
+	left: 0;
+	/* Usamos unidades de viewport para garantizar cobertura total de la ventana */
+	width: 100vw;
+	height: 100vh;
+	/* Un color de fondo oscuro con opacidad para el efecto de oscurecimiento */
+	background-color: rgba(0, 0, 0, 0.7);
+	/* Centrado del contenido del popup */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* Un z-index alto para asegurarnos de que esté por encima de TODO (menú, footer, etc.) */
+	z-index: 99999;
+	/* Efecto opcional de desenfoque del fondo (no funciona en navegadores muy antiguos) */
+	backdrop-filter: blur(5px);
+}
+
+.popup-content {
+	background: white;
+	padding: 2rem;
+	border-radius: 15px;
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+	/* Aseguramos que el contenido en sí tenga sombra para destacar */
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	/* Mantenemos la animación de entrada */
+	animation: slideUp 0.3s ease-out;
+}
+
+/* El resto de tus estilos para .popup-icon y la animación @keyframes slideUp permanecen igual */

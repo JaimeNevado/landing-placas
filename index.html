@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Placas NFC | Jaime Nevado</title>
+	<title>Escalator | Placas NFC Profesionales para Reseñas B2B</title>
 	<style>
 		:root {
 			--bg: #ffffff;
@@ -56,8 +56,11 @@
 		}
 
 		.logo {
-			font-weight: 600;
-			font-size: 1.2rem;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-weight: 700;
+			font-size: 1.1rem;
 			letter-spacing: -0.02em;
 			text-decoration: none !important;
 			color: var(--text) !important;
@@ -66,6 +69,11 @@
 
 		.logo:hover {
 			opacity: 0.7;
+		}
+
+		.logo svg {
+			width: 24px;
+			height: 24px;
 		}
 
 		.nav-links {
@@ -1128,16 +1136,27 @@
 
 <body>
 
+
+
 	<!-- ── NAV ── -->
 	<nav class="navbar">
 		<div class="nav-content">
-			<a href="index.html" class="logo">Jaime Nevado</a>
+			<a href="index.html" class="logo">
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true">
+					<rect width="28" height="28" rx="8" fill="#0B0B0C" />
+					<rect x="6" y="17" width="3.5" height="6" rx="1" fill="#F5C400" />
+					<rect x="12.25" y="12" width="3.5" height="11" rx="1" fill="#F5C400" />
+					<rect x="18.5" y="6" width="3.5" height="17" rx="1" fill="#F5C400" />
+				</svg>
+				<span>Escalator</span>
+			</a>
 			<ul class="nav-links" id="nav-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="projects.html">Projects</a></li>
-				<li><a href="tools.html">Tools</a></li>
-				<li><a href="links.html">Links</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="#funcionamiento">Cómo funciona</a></li>
+				<li><a href="#galeria">Producto</a></li>
+				<li><a href="#precios">Precios</a></li>
+				<li><a href="#opiniones">Opiniones</a></li>
+				<li><a href="#faq">FAQ</a></li>
 			</ul>
 			<div class="menu-btn" id="menu-btn">
 				<div class="menu-btn__burger"></div>
@@ -1148,10 +1167,10 @@
 	<!-- ── HERO ── -->
 	<section class="hero-section">
 
-		<h1>Multiplica tus reseñas<br>de 5 estrellas.</h1>
+		<h1>Escala tus reseñas<br>de 5 estrellas.</h1>
 		<p class="gray-text">
-			Coloca una placa NFC en tu local. El cliente acerca el móvil.
-			La app se abre lista para valorar. Sin fricción.
+			Coloca placas NFC en tu local. El cliente acerca el móvil.
+			La app se abre lista para valorar. Sin fricción ni pereza.
 		</p>
 		<div class="hero-cta">
 			<a href="#precios" class="btn">Quiero mis placas</a>
@@ -1168,6 +1187,8 @@
 			<div class="arrow-scroll"></div>
 		</div>
 	</section>
+
+	<div id="funcionamiento"></div>
 
 	<!-- ── HOW IT WORKS ── -->
 	<main class="container">
@@ -1205,313 +1226,344 @@
 							points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
 					</svg>
 				</div>
-				<h3>Recibes tu reseña de 5 ★</h3>
-				<p>En segundos. Sin que el cliente tenga que buscarte. La fricción desaparece y las reseñas se
-					multiplican.</p>
-			</div>
-		</div>
-	</main>
-
-	<!-- ── GALLERY ── -->
-	<main class="container" id="galeria" style="padding-top:0;">
-		<span class="section-label reveal">El producto</span>
-		<h2 class="section-title reveal">Diseñadas para durar toda la vida.</h2>
-
-		<div class="gallery-grid reveal">
-			<div class="gc gc1" onclick="openLb(this)">
-				<img src="fotosPlacas/placaBarra.jpg" alt="Placa en barra de restaurante">
-			</div>
-			<div class="gc gc2" onclick="openLb(this)">
-				<img src="fotosPlacas/detalleRelieve.jpg" alt="Vista cenital">
-			</div>
-			<div class="gc gc3" onclick="openLb(this)">
-				<img src="fotosPlacas/vistaCenital.jpg" alt="Detalle del relieve">
-			</div>
-			<div class="gc gc4" onclick="openLb(this)">
-				<img src="fotosPlacas/placaMesa.jpg" alt="Placa en mesa">
-			</div>
-			<div class="gc gc5" onclick="openLb(this)">
-				<img src="fotosPlacas/scanMovil.jpg" alt="Scan con móvil">
+				<h3>Ganas tu 5★</h3>
+				<p>Sin pedirlo dos veces. La reseña se publica en segundos, con el cliente todavía en la mesa.</p>
 			</div>
 		</div>
 
-		<div class="features-row reveal">
-			<div class="feature-card">
-				<span class="feature-emoji">🔋</span>
-				<h4>Sin baterías ni carga</h4>
-				<p>El chip NFC es pasivo. No necesita energía propia. Funciona para siempre.</p>
+		<div id="galeria"></div>
+
+		<!-- ── GALLERY ── -->
+		<div style="margin-top: 80px;">
+			<span class="section-label reveal">El producto</span>
+			<h2 class="section-title reveal">Fotos reales del producto.</h2>
+			<div class="gallery-grid reveal">
+				<div class="gc gc1" onclick="openLb(this)">
+					<img src="fotosPlacas/placaBarra.jpg" alt="Placa Escalator en barra">
+				</div>
+				<div class="gc gc2" onclick="openLb(this)">
+					<img src="fotosPlacas/detalleRelieve.jpg" alt="Detalle relieve">
+				</div>
+				<div class="gc gc3" onclick="openLb(this)">
+					<img src="fotosPlacas/vistaCenital.jpg" alt="Vista cenital">
+				</div>
+				<div class="gc gc4" onclick="openLb(this)">
+					<img src="fotosPlacas/placaMesa.jpg" alt="Placa en mesa">
+				</div>
+				<div class="gc gc5" onclick="openLb(this)">
+					<img src="fotosPlacas/scanMovil.jpg" alt="Escaneo móvil">
+				</div>
 			</div>
-			<div class="feature-card">
-				<span class="feature-emoji">🖨️</span>
-				<h4>Impresión industrial</h4>
-				<p>Bambu Lab de precisión. Texto en plástico fundido en relieve. No se borra nunca.</p>
-			</div>
-			<div class="feature-card">
-				<span class="feature-emoji">📱</span>
-				<h4>iPhone y Android</h4>
-				<p>Sin app, sin QR. Solo acercar el móvil. Compatible con todos los smartphones modernos.</p>
-			</div>
-			<div class="feature-card">
-				<span class="feature-emoji">✨</span>
-				<h4>Diseño minimalista</h4>
-				<p>Base blanca, relieves negro mate. Encaja en cualquier local sin romper la estética.</p>
+
+			<div class="features-row reveal">
+				<div class="feature-card">
+					<span class="feature-emoji">🔋</span>
+					<h4>Sin baterías</h4>
+					<p>El chip NFC es pasivo. No necesita carga. Funciona para siempre.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-emoji">🖨️</span>
+					<h4>Impresión 3D</h4>
+					<p>Fabricadas con precisión Bambu Lab. Resistentes y duraderas.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-emoji">📱</span>
+					<h4>Compatibilidad</h4>
+					<p>Funciona con iPhone y Android sin necesidad de instalar ninguna app.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-emoji">✨</span>
+					<h4>Diseño Pro</h4>
+					<p>Minimalista y profesional. Encaja en cualquier tipo de negocio.</p>
+				</div>
 			</div>
 		</div>
-	</main>
 
-	<!-- ── MODELS ── -->
-	<main class="container" style="padding-top:0;">
-		<span class="section-label reveal">Los modelos</span>
-		<h2 class="section-title reveal">Google y TripAdvisor, en dos idiomas.</h2>
-		<div class="models-grid reveal">
-			<div class="model-card">
-				<div class="model-preview">
-					<img src="fotosPlacas/modeloGoogleES.jpg" alt="Placa Google Español">
+		<!-- ── MODELS ── -->
+		<div id="modelos" style="margin-top: 80px;">
+			<span class="section-label reveal">Catálogo</span>
+			<h2 class="section-title reveal">Elige tu plataforma.</h2>
+			<div class="models-grid reveal">
+				<div class="model-card">
+					<div class="model-preview">
+						<img src="fotosPlacas/modeloGoogleES.jpg" alt="Google ES">
+					</div>
+					<p class="model-platform">Google Reseñas</p>
+					<p class="model-name">Español 🇪🇸</p>
 				</div>
-				<p class="model-platform">Google Reseñas</p>
-				<p class="model-name">Español 🇪🇸</p>
-			</div>
-			<div class="model-card">
-				<div class="model-preview">
-					<img src="fotosPlacas/modeloGoogleEN.jpg" alt="Placa Google Inglés">
+				<div class="model-card">
+					<div class="model-preview">
+						<img src="fotosPlacas/modeloGoogleEN.jpg" alt="Google EN">
+					</div>
+					<p class="model-platform">Google Reviews</p>
+					<p class="model-name">English 🇬🇧</p>
 				</div>
-				<p class="model-platform">Google Reviews</p>
-				<p class="model-name">English 🇬🇧</p>
-			</div>
-			<div class="model-card">
-				<div class="model-preview">
-					<img src="fotosPlacas/modeloTripES.jpg" alt="Placa TripAdvisor Español">
+				<div class="model-card">
+					<div class="model-preview">
+						<img src="fotosPlacas/modeloTripES.jpg" alt="TripAdvisor ES">
+					</div>
+					<p class="model-platform">TripAdvisor</p>
+					<p class="model-name">Español 🇪🇸</p>
 				</div>
-				<p class="model-platform">TripAdvisor</p>
-				<p class="model-name">Español 🇪🇸</p>
-			</div>
-			<div class="model-card">
-				<div class="model-preview">
-					<img src="fotosPlacas/modeloTripEN.jpg" alt="Placa TripAdvisor Inglés">
+				<div class="model-card">
+					<div class="model-preview">
+						<img src="fotosPlacas/modeloTripEN.jpg" alt="TripAdvisor EN">
+					</div>
+					<p class="model-platform">TripAdvisor</p>
+					<p class="model-name">English 🇬🇧</p>
 				</div>
-				<p class="model-platform">TripAdvisor</p>
-				<p class="model-name">English 🇬🇧</p>
 			</div>
 		</div>
-	</main>
 
-	<!-- ── PROOF ── -->
-	<main class="container" style="padding-top:0;">
-		<div class="proof-wrap reveal">
-			<div>
-				<span class="proof-label">Caso de éxito real</span>
-				<p class="proof-title">De 3 a 39 reseñas en un mes.</p>
-				<p class="proof-sub">Restaurante en Ronda, Málaga. Tras instalar el Pack Premium en Abril, el volumen de
-					reseñas se disparó y la posición en TripAdvisor subió del 68º al 42º en menos de 30 días.</p>
-			</div>
-			<div>
-				<div class="chart-box">
-					<p class="chart-title">Reseñas mensuales · Restaurante ejemplo</p>
-					<div class="mini-chart">
-						<div class="mb" style="height:8%"></div>
-						<div class="mb" style="height:10%"></div>
-						<div class="mb" style="height:8%"></div>
-						<div class="mb" style="height:15%"></div>
-						<div class="mb" style="height:8%"></div>
-						<div class="mb hi" style="height:100%">
-							<span class="mb-tag">x13 reseñas</span>
+		<!-- ── PROOF ── -->
+
+		<div style="margin-top: 80px;">
+			<div class="proof-wrap reveal">
+				<div>
+					<span class="proof-label">Caso de éxito real</span>
+					<p class="proof-title">De 3 a 39 reseñas en un mes.</p>
+					<p class="proof-sub">Tras instalar Escalator, este negocio multiplicó su visibilidad y mejoró su
+						ranking local en tiempo récord.</p>
+				</div>
+				<div>
+					<div class="chart-box">
+						<p class="chart-title">Reseñas mensuales</p>
+						<div class="mini-chart">
+							<div class="mb" style="height:10%"></div>
+							<div class="mb" style="height:15%"></div>
+							<div class="mb" style="height:12%"></div>
+							<div class="mb" style="height:20%"></div>
+							<div class="mb" style="height:15%"></div>
+							<div class="mb hi" style="height:100%">
+								<span class="mb-tag">x13 reseñas</span>
+							</div>
+						</div>
+						<div class="chart-months">
+							<span class="cm">Nov</span>
+							<span class="cm">Dic</span>
+							<span class="cm">En</span>
+							<span class="cm">Feb</span>
+							<span class="cm">Mar</span>
+							<span class="cm hi">Abr ✦</span>
 						</div>
 					</div>
-					<div class="chart-months">
-						<span class="cm">Nov</span>
-						<span class="cm">Dic</span>
-						<span class="cm">En</span>
-						<span class="cm">Feb</span>
-						<span class="cm">Mar</span>
-						<span class="cm hi">Abr ✦</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- ── PRICING ── -->
+		<div id="precios"></div>
+		<div style="margin-top: 80px;">
+			<span class="section-label reveal">Pago único (Nada de suscripciones)</span>
+			<h2 class="section-title reveal">Elige tu pack.</h2>
+			<div class="pricing-grid">
+				<div class="price-card reveal">
+					<p class="price-name">Pack Básico</p>
+					<p class="price-amount">15€</p>
+					<p class="price-note">Pago único.</p>
+					<ul class="price-includes">
+						<li>1 placa NFC a elegir</li>
+						<li>Google o TripAdvisor</li>
+						<li>Español o Inglés</li>
+						<li>Configuración incluida</li>
+					</ul>
+					<a href="https://wa.me/34636798417?text=Hola%2C%20me%20interesa%20el%20Pack%20B%C3%A1sico."
+						target="_blank" class="price-cta">Pedir ahora</a>
+				</div>
+				<div class="price-card featured reveal">
+					<span class="price-badge">⭐ Más vendido</span>
+					<p class="price-name">Pack Premium</p>
+					<p class="price-amount">40€</p>
+					<p class="price-note">La opción más completa.</p>
+					<ul class="price-includes">
+						<li>4 placas configuradas</li>
+						<li>Google ES + EN</li>
+						<li>Trip ES + EN</li>
+						<li>Configuración incluida</li>
+						<li>Envío prioritario</li>
+					</ul>
+					<a href="https://wa.me/34636798417?text=Hola%2C%20me%20interesa%20el%20Pack%20Premium."
+						target="_blank" class="price-cta">Pedir ahora</a>
+				</div>
+				<div class="price-card reveal">
+					<p class="price-name">Pack Dúo</p>
+					<p class="price-amount">25€</p>
+					<p class="price-note">Pago único.</p>
+					<ul class="price-includes">
+						<li>2 placas NFC a elegir</li>
+						<li>Combina plataformas</li>
+						<li>Español o Inglés</li>
+						<li>Configuración incluida</li>
+					</ul>
+					<a href="https://wa.me/34636798417?text=Hola%2C%20me%20interesa%20el%20Pack%20D%C3%BAo."
+						target="_blank" class="price-cta">Pedir ahora</a>
+				</div>
+			</div>
+		</div>
+		<div id="opiniones"></div>
+
+		<!-- ── TESTIMONIALS ── -->
+		<div style="margin-top: 80px;">
+			<span class="section-label reveal">Opiniones</span>
+			<h2 class="section-title reveal">Lo que dicen otros negocios.</h2>
+			<div class="t-grid">
+				<div class="t-card reveal">
+					<div class="t-stars">★★★★★</div>
+					<p class="t-text">"Increíble la rapidez con la que hemos subido en TripAdvisor. Los clientes están
+						encantados con la facilidad."</p>
+					<p class="t-author">Restaurante en Ronda</p>
+				</div>
+				<div class="t-card reveal">
+					<div class="t-stars">★★★★★</div>
+					<p class="t-text">"Un antes y un después. Ya no tenemos que estar pidiendo reseñas, se lo dejamos en
+						la mesa con la cuenta y las 5 estrellas vienen solas."</p>
+					<p class="t-author">Cafetería en Alhaurín de la Torre</p>
+				</div>
+				<div class="t-card reveal">
+					<div class="t-stars">★★★★★</div>
+					<p class="t-text">"Calidad excelente y encima vienen configuradas listas para usar. Muy recomendable
+						para cualquier
+						negocio local."</p>
+					<p class="t-author">Restaurante en Málaga</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="faq"></div>
+
+		<!-- ── FAQ ── -->
+		<div id="faq" style="margin-top: 80px;">
+			<span class="section-label reveal">Preguntas frecuentes</span>
+			<h2 class="section-title reveal">Dudas comunes.</h2>
+			<div class="faq-list reveal">
+				<div class="faq-item">
+					<button class="faq-q">¿Necesita batería? <span class="faq-icon">+</span></button>
+					<div class="faq-a">
+						<p>No, funciona mediante tecnología NFC pasiva, por lo que no requiere carga ni mantenimiento.
+						</p>
+					</div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q">¿Es compatible con todos los móviles? <span class="faq-icon">+</span></button>
+					<div class="faq-a">
+						<p>Sí, es compatible con todos los iPhone y dispositivos Android modernos que tengan NFC.</p>
+					</div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q">¿Cómo se configura? <span class="faq-icon">+</span></button>
+					<div class="faq-a">
+						<p>No te preocupes, nosotros te lo enviamos configurado. Solo tienes que decirnos el nombre de
+							tu negocio y la placa te llega
+							lista para usar.</p>
+					</div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q">¿Hay que pagar suscripción? <span class="faq-icon">+</span></button>
+					<div class="faq-a">
+						<p>No, en Escalator creemos que debes ser dueño de lo que compres, por eso, el pago es único
+							y el producto es tuyo para toda la vida.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</main>
 
-	<!-- ── PRICING ── -->
-	<main class="container" id="precios" style="padding-top:0;">
-		<span class="section-label reveal">Pago único · Sin suscripciones</span>
-		<h2 class="section-title reveal">Elige tu pack.</h2>
-		<div class="pricing-grid">
-			<div class="price-card reveal">
-				<p class="price-name">Pack Básico</p>
-				<p class="price-amount">15€</p>
-				<p class="price-note">Pago único. Tuyo para siempre.</p>
-				<ul class="price-includes">
-					<li>1 placa NFC a elegir</li>
-					<li>Google o TripAdvisor</li>
-					<li>Español o Inglés</li>
-					<li>Chip NFC de por vida</li>
-				</ul>
-				<a href="https://wa.me/34636798417?text=Hola%20Jaime%2C%20me%20interesa%20el%20Pack%20B%C3%A1sico%20de%201%20placa%20NFC.%20%C2%BFPuedes%20decirme%20c%C3%B3mo%20funciona%20el%20proceso%20de%20pedido%3F"
-					target="_blank" class="price-cta">Pedir por WhatsApp</a>
-			</div>
-			<div class="price-card featured reveal">
-				<span class="price-badge">⭐ Más vendido</span>
-				<p class="price-name">Pack Premium</p>
-				<p class="price-amount">40€</p>
-				<p class="price-note">La opción más completa para tu local.</p>
-				<ul class="price-includes">
-					<li>4 placas configuradas</li>
-					<li>Google ES + Google EN</li>
-					<li>TripAdvisor ES + TripAdvisor EN</li>
-					<li>Soporte organizador de regalo</li>
-					<li>Cubre locales y turistas</li>
-				</ul>
-				<a href="https://wa.me/34636798417?text=Hola%20Jaime%2C%20me%20interesa%20el%20Pack%20Premium%20de%204%20placas%20NFC.%20%C2%BFPuedes%20decirme%20c%C3%B3mo%20funciona%20el%20proceso%20de%20pedido%3F"
-					target="_blank" class="price-cta">Pedir por WhatsApp</a>
-			</div>
-			<div class="price-card reveal">
-				<p class="price-name">Pack Dúo</p>
-				<p class="price-amount">25€</p>
-				<p class="price-note">Pago único. Tuyo para siempre.</p>
-				<ul class="price-includes">
-					<li>2 placas NFC a elegir</li>
-					<li>Combina plataformas o idiomas</li>
-					<li>Google y/o TripAdvisor</li>
-					<li>Chip NFC de por vida</li>
-				</ul>
-				<a href="https://wa.me/34636798417?text=Hola%20Jaime%2C%20me%20interesa%20el%20Pack%20D%C3%BAo%20de%202%20placas%20NFC.%20%C2%BFPuedes%20decirme%20c%C3%B3mo%20funciona%20el%20proceso%20de%20pedido%3F"
-					target="_blank" class="price-cta">Pedir por WhatsApp</a>
-			</div>
+		<!-- ── CTA BOTTOM ── -->
+		<div class="cta-block reveal" style="margin-top: 80px;">
+			<span class="section-label">Empieza hoy</span>
+			<h2>Haz crecer tu reputación online.</h2>
+			<p>Únete a los negocios que ya están escalando sus reseñas de forma automática.</p>
+			<a href="https://wa.me/34636798417" class="btn">Pedir mis placas</a>
+			<div class="wa-hint">Respuesta inmediata por WhatsApp</div>
 		</div>
-	</main>
 
-	<!-- ── TESTIMONIALS ── -->
-	<main class="container" style="padding-top:0;">
-		<span class="section-label reveal">Lo que dicen los hosteleros</span>
-		<h2 class="section-title reveal">Resultados reales.</h2>
-		<div class="t-grid">
-			<div class="t-card reveal">
-				<p class="t-stars">★★★★★</p>
-				<p class="t-text">"Llevaba años pidiendo a los clientes que nos dejaran reseña y casi nadie lo hacía.
-					Desde que puse la placa en la barra, cada semana tenemos nuevas valoraciones de 5 estrellas."</p>
-				<p class="t-author">María G.</p>
-				<p class="t-place">Bar Restaurante · Alhaurín de la Torre</p>
-			</div>
-			<div class="t-card reveal">
-				<p class="t-stars">★★★★★</p>
-				<p class="t-text">"Lo que más me gustó fue lo fácil. No tuve que instalar nada, no hay que cargarlo. Los
-					turistas también la usan porque tiene la versión en inglés."</p>
-				<p class="t-author">Carlos M.</p>
-				<p class="t-place">Cafetería · Málaga</p>
-			</div>
-			<div class="t-card reveal">
-				<p class="t-stars">★★★★★</p>
-				<p class="t-text">"Pasé de 3,8 a 4,6 en Google en poco más de un mes. Ahora aparezco más arriba en las
-					búsquedas. El Pack Premium fue la mejor inversión del año."</p>
-				<p class="t-author">Ana R.</p>
-				<p class="t-place">Restaurante · Coín</p>
-			</div>
-		</div>
-	</main>
-
-	<!-- ── FAQ ── -->
-	<main class="container" style="padding-top:0;">
-		<span class="section-label reveal">Preguntas frecuentes</span>
-		<h2 class="section-title reveal">Todo lo que necesitas saber.</h2>
-		<div class="faq-list reveal">
-			<div class="faq-item">
-				<button class="faq-q" onclick="toggleFaq(this)">¿Funciona con cualquier móvil? <span
-						class="faq-icon">+</span></button>
-				<div class="faq-a">
-					<p>Sí. Funciona con iPhone (desde el 7) y con la mayoría de Android modernos. No requiere ninguna
-						app; el propio sistema operativo gestiona la lectura NFC automáticamente.</p>
-				</div>
-			</div>
-			<div class="faq-item">
-				<button class="faq-q" onclick="toggleFaq(this)">¿Hay que pagar algo después? <span
-						class="faq-icon">+</span></button>
-				<div class="faq-a">
-					<p>No. Es un pago único. Sin cuotas mensuales, sin licencias, sin renovaciones. La placa es tuya de
-						por vida.</p>
-				</div>
-			</div>
-			<div class="faq-item">
-				<button class="faq-q" onclick="toggleFaq(this)">¿Puedo cambiar a qué plataforma lleva la placa? <span
-						class="faq-icon">+</span></button>
-				<div class="faq-a">
-					<p>El enlace está configurado de fábrica para tu local. Si necesitas cambiar la URL, me lo dices por
-						WhatsApp y te lo actualizo sin ningún coste adicional.</p>
-				</div>
-			</div>
-			<div class="faq-item">
-				<button class="faq-q" onclick="toggleFaq(this)">¿Cómo se limpia? ¿Es resistente? <span
-						class="faq-icon">+</span></button>
-				<div class="faq-a">
-					<p>Se limpia con un trapo húmedo o con los mismos productos de la barra. El texto es plástico
-						fundido en relieve, no tinta ni adhesivo, por lo que no se borra ni se despega nunca.</p>
-				</div>
-			</div>
-			<div class="faq-item">
-				<button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tarda en llegar? <span
-						class="faq-icon">+</span></button>
-				<div class="faq-a">
-					<p>Normalmente 48-72 horas desde que confirmas el pedido. Cada placa se configura con el enlace
-						directo a tu negocio, así que hay un pequeño tiempo de preparación personalizada.</p>
-				</div>
-			</div>
-		</div>
-	</main>
-
-	<!-- ── CTA BOTTOM ── -->
-	<main class="container" style="padding-top:0;">
-		<div class="cta-block reveal">
-			<span class="section-label">¿Listo para empezar?</span>
-			<h2>Tu próxima reseña de 5 estrellas<br>está a un toque.</h2>
-			<p>Sin suscripciones, sin contratos. Escríbeme por WhatsApp y en 48h tienes las placas en tu local.</p>
-			<a href="https://wa.me/34636798417?text=Hola%20Jaime%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20placas%20NFC%20para%20mi%20negocio."
-				target="_blank" class="btn">
-				Pedir mis placas por WhatsApp
-			</a>
-			<p class="wa-hint">
-				<svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-					<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-				</svg>
-				Trato directo y personalizado · Envío en 48-72h
-			</p>
-		</div>
 	</main>
 
 	<footer>
-		<p>by Jaime Nevado</p>
+		<div class="container">
+			<p>© 2026 Escalator | Jaime Nevado</p>
+		</div>
 	</footer>
 
 	<!-- ── LIGHTBOX ── -->
-	<div class="lightbox" id="lightbox" onclick="closeLb()">
-		<span class="lb-close">×</span>
-		<img src="" alt="" id="lb-img">
+	<div class="lightbox" id="lightbox">
+		<span class="lb-close" onclick="closeLb()">✕</span>
+		<img id="lightbox-img" src="" alt="">
 	</div>
 
 	<script>
-		function toggleFaq(btn) {
-			const item = btn.parentElement;
-			const ans = item.querySelector('.faq-a');
-			const open = item.classList.contains('open');
-			document.querySelectorAll('.faq-item.open').forEach(i => {
-				i.classList.remove('open');
-				i.querySelector('.faq-a').style.maxHeight = null;
-			});
-			if (!open) {
-				item.classList.add('open');
-				ans.style.maxHeight = ans.scrollHeight + 'px';
+		// Menú móvil
+		const menuBtn = document.getElementById('menu-btn');
+		const navMenu = document.getElementById('nav-menu');
+		let menuOpen = false;
+
+		menuBtn.addEventListener('click', () => {
+			if (!menuOpen) {
+				menuBtn.classList.add('open');
+				navMenu.classList.add('open');
+				menuOpen = true;
+			} else {
+				menuBtn.classList.remove('open');
+				navMenu.classList.remove('open');
+				menuOpen = false;
 			}
+		});
+
+		// Cerrar menú al hacer click en links
+		document.querySelectorAll('.nav-links a').forEach(link => {
+			link.addEventListener('click', () => {
+				menuBtn.classList.remove('open');
+				navMenu.classList.remove('open');
+				menuOpen = false;
+			});
+		});
+
+		// Reveal on scroll
+		const reveals = document.querySelectorAll('.reveal');
+		const reveal = () => {
+			reveals.forEach(el => {
+				const windowHeight = window.innerHeight;
+				const elementTop = el.getBoundingClientRect().top;
+				const elementVisible = 100;
+				if (elementTop < windowHeight - elementVisible) {
+					el.classList.add('active');
+				}
+			});
+		};
+		window.addEventListener('scroll', reveal);
+		reveal();
+
+		// FAQ Accordion
+		document.querySelectorAll('.faq-q').forEach(q => {
+			q.addEventListener('click', () => {
+				const item = q.parentElement;
+				item.classList.toggle('open');
+				const a = q.nextElementSibling;
+				if (item.classList.contains('open')) {
+					a.style.maxHeight = a.scrollHeight + "px";
+				} else {
+					a.style.maxHeight = 0;
+				}
+			});
+		});
+
+		// Lightbox
+		const lightbox = document.getElementById('lightbox');
+		const lbImg = document.getElementById('lightbox-img');
+
+		function openLb(el) {
+			const src = el.querySelector('img').src;
+			lbImg.src = src;
+			lightbox.classList.add('open');
 		}
 
-		function openLb(cell) {
-			const img = cell.querySelector('img');
-			if (!img) return;
-			document.getElementById('lb-img').src = img.src;
-			document.getElementById('lightbox').classList.add('open');
+		function closeLb() {
+			lightbox.classList.remove('open');
 		}
 
-		function closeLb() { document.getElementById('lightbox').classList.remove('open'); }
-		document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) closeLb();
+		});
 	</script>
-
-	<script src="js/main.js"></script>
 </body>
 
 </html>
